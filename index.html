@@ -1,1 +1,30 @@
-Hello World
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Inclusive Innovations - SmartIndiaHackathon2018 Site</title>
+<script type="text/javascript">
+baseUrl = "http://on.i4c.in/";
+baseUrl = "https://i4cindia.github.io/";
+redirectUrl = "https://i4c.in";
+sepSymb = "?"
+
+
+redirCode = window.location.href.substring(baseUrl.length+1,window.location.href.length)
+//window.alert(redirCode);
+if(redirCode=="i4ccoin") redirectUrl="http://i4c.co.in";
+else if(redirCode=="evalForm") redirectUrl="https://goo.gl/forms/OVjLgNelcW7bXURI2";
+else redirectUrl = "https://i4c.in";
+
+//window.alert(redirectUrl);
+window.location.href = redirectUrl;
+
+var a = document.getElementById('lnkUrl');
+a.setAttribute("href", redirectUrl);
+//a.href = redirectUrl
+
+</script>
+</head>
+<body>
+<a id="lnkUrl" href="https://i4c.in">Click here to visit i4c website.<a>
+</body>
+</html>
