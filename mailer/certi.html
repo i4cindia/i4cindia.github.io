@@ -1,0 +1,123 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Certificate to Evalulors</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.committee-members b{
+			height:18px;
+			display:block;
+			color:#5d8cbd;
+			font-size:9px;
+		}
+		.certificate-text{
+			font-size: 16px;
+			color: #666666;
+			height:16px;
+		}
+		.certificate-text.text1{
+			padding-bottom:0;
+		}
+		.certificate-text.text2{
+			margin-top: 20px;
+		}
+		.certitext-span span{
+			display:block;
+			margin-top:25px
+		}
+		.certitext-span span.sih-text{
+			margin-top:12px
+		}
+		.certitext-span span.name{
+			display:block;
+			border-bottom:1px solid #666;
+			height:30px;
+			line-height:30px;
+			margin:0 auto;
+			width:310px;
+			display:flex;
+		}
+		.certitext-span span.text-bottom{
+		  align-self: flex-end;
+		  margin:0;
+		  width:100%;
+		  text-align:center;
+		}
+	</style>
+<script src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+    $("#txtName").text("Snehkumar Shahani")
+
+	function getUrlVars()
+	{
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++)
+		{
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		return vars;
+	}
+	/*var name = getUrlVars()["name"]
+	name=decodeURI(name);*/
+	$("#txtName").text(decodeURI(getUrlVars()["name"]))
+	/*$("#txtMinistry").text(decodeURI(getUrlVars()["ministry"]))
+	$("#txtI4cId").text(decodeURI(getUrlVars()["i4cid"]))
+	$("title").text(decodeURI(getUrlVars()["docName"]))*/
+});
+</script>
+</head>
+<body>
+	<div style="width:800px;height:520px; margin:0;">
+			<img src="images/img_certificate_bg.png" alt="Certificate Background" height="520" width="800"  style="position:absolute; top:0; left:0; z-index:" />
+			<table width="800px" style="z-index:1;top: 118px;position:relative;width:800px;font-family: 'Calibri';">
+				<tr>
+					<td align="center" valign="top" class="certitext-span"> 
+					<span style="color:#f59a24; font-size: 41px; font-weight:bold; margin-top:0">Evaluator</span>
+					<span class="certificate-text text1">This Certificate is awarded to</span>
+					<span class="name">
+						<span class="text-bottom" id="txtName">
+							
+						</span>
+					</span>
+					<span class="certificate-text text2">as external evalutor for</span>
+					<span class="sih-text" style="color: #666666;font-size: 25px;">'Smart India Hackthon, 2018'.</span>
+					</td>	
+				</tr>
+				<tr>
+				<td colspan="3">
+					<table width="100%" style="margin-top:40px; font-size:7px">
+						<tr>
+							<td align="center" valign="top" class="committee-members" style="width:33.33%; height: 160px;">
+								<img src="images/signature_subramanyam.png" alt="Sponsers" height="" width="17%" style="margin-bottom: 4px;" /><br/>
+								<b>Shri R. Subramanyam</b>
+								
+								Hon'ble Secretary, MHRD
+							</td>
+							<td align="center" valign="top" class="committee-members" style="width:33.33%">
+								<img src="images/signature_sahasrabudhe.png" alt="Sponsers" height="" width="29%" style="margin-bottom: 2px;" /><br/>
+								<b>Dr. Anil D. Sahasrabudhe</b>
+								Chairman, AICTE<br>
+								Chairman, Organizing Committee,<br>
+								Smart India Hackathon 2018
+							</td>
+							<td align="center" valign="top" class="committee-members" style="width:33.33%">
+								<img src="images/signature_anand-deshpande.png" alt="Sponsers" height="" width="33%" style="margin-bottom:4px" /><br/>
+								<b>Dr. Anand Deshpande</b>
+								Chairman and MD, Persistent Systems<br>
+								Co-Chairman, Organizing Committee,<br>
+								Smart India Hackathon 2018
+							</td>
+						</tr>
+					</table>
+				<td>
+			</table>
+	</div>
+</body>
+</html>
