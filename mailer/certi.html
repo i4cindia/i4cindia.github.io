@@ -1,8 +1,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Certificate to Evalulors</title>
+	<title>Certificate to Evaluator</title>
 	<style>
+		@media print {
+			*{
+				margin:0;
+				padding:0
+			}
+			@page {
+				margin: 0;
+				width:110%
+			}
+            }
 		*{
 			margin:0;
 			padding:0;
@@ -22,11 +32,11 @@
 			padding-bottom:0;
 		}
 		.certificate-text.text2{
-			margin-top: 20px;
+			margin-top: 25px;
 		}
 		.certitext-span span{
 			display:block;
-			margin-top:25px
+			margin-top:18px
 		}
 		.certitext-span span.sih-text{
 			margin-top:12px
@@ -34,8 +44,8 @@
 		.certitext-span span.name{
 			display:block;
 			border-bottom:1px solid #666;
-			height:30px;
-			line-height:30px;
+			height:40px;
+			line-height:60px;
 			margin:0 auto;
 			width:310px;
 			display:flex;
@@ -74,15 +84,17 @@ $( document ).ready(function() {
 </script>
 </head>
 <body>
-	<div style="width:800px;height:520px; margin:0;">
-			<img src="images/img_certificate_bg.png" alt="Certificate Background" height="520" width="800"  style="position:absolute; top:0; left:0; z-index:" />
-			<table width="800px" style="z-index:1;top: 118px;position:relative;width:800px;font-family: 'Calibri';">
+	<div style="width:792px;height:612px; margin:0;">
+			<!--<img src="images/img_certificate_bg.png" alt="Certificate Background" height="520" width="800"  style="position:absolute; top:0; left:0; z-index:" />-->
+			<!--<img src="images/certificate_bg.svg" alt="Certificate Background" height="612" width="792"  style="position:absolute; top:0; left:0; z-index:0" />-->
+                 <img src="images/bg_certificate.jpg" alt="Certificate Background" height="614" width="792"  style="position:absolute; top:-2px; left:0; z-index:0" />
+			<table width="792px" style="z-index:1;top: 145px;position:relative;width:800px;font-family: 'Calibri';">
 				<tr>
 					<td align="center" valign="top" class="certitext-span"> 
 					<span style="color:#f59a24; font-size: 41px; font-weight:bold; margin-top:0">Evaluator</span>
 					<span class="certificate-text text1">This Certificate is awarded to</span>
 					<span class="name">
-						<span class="text-bottom" id="txtName">
+						<span class="text-bottom" style="color:#3a6380" id="txtName">
 							
 						</span>
 					</span>
@@ -91,10 +103,11 @@ $( document ).ready(function() {
 					</td>	
 				</tr>
 				<tr>
-				<td colspan="3">
-					<table width="100%" style="margin-top:40px; font-size:7px">
+				<td colspan="3" style="padding-top:5px">
+<br/><br/>
+					<table width="100%" style="font-size:7px; ">
 						<tr>
-							<td align="center" valign="top" class="committee-members" style="width:33.33%; height: 160px;">
+							<td align="center" valign="top" class="committee-members" style="width:33.33%;">
 								<img src="images/signature_subramanyam.png" alt="Sponsers" height="" width="17%" style="margin-bottom: 4px;" /><br/>
 								<b>Shri R. Subramanyam</b>
 								
