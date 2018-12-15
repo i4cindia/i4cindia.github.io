@@ -39,6 +39,7 @@
    "density": "4.0"
   }
  ],
+ "scope": "/mobtest/",
  "start_url": "index.html",
  "display": "standalone",
  "background_color": "#FF9800",
