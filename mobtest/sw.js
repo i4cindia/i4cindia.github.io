@@ -3,7 +3,8 @@
 var cacheName = 'SIHPage';
 var filesToCache = [
   '/mobtest',
-  'index.html'
+  'index.html',
+  'main.js'
 ];
 
 self.addEventListener('install', function(e) {
