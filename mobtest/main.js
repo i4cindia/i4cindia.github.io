@@ -51,3 +51,13 @@ function displayNotification(message) {
   localStorage.setItem("NotificationRecord", localStorage.getItem("NotificationRecord")+"<br/>"+"Notification on "+timeNow+" is "+message);
   document.getElementById("divInfo").innerHTML=localStorage.getItem("NotificationRecord");
 }
+
+var deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', function (e) {
+  //e.preventDefault(); // Prevent Chrome 67 and earlier from automatically showing the prompt
+  //deferredPrompt = e; // Stash the event so it can be triggered later.
+
+  //showAddToHomeScreen();
+
+});
