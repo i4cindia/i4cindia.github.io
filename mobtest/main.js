@@ -52,12 +52,20 @@ function displayNotification(message) {
   document.getElementById("divInfo").innerHTML=localStorage.getItem("NotificationRecord");
 }
 
-var deferredPrompt;
-
 window.addEventListener('beforeinstallprompt', function (e) {
-  //e.preventDefault(); // Prevent Chrome 67 and earlier from automatically showing the prompt
-  //deferredPrompt = e; // Stash the event so it can be triggered later.
 
-  //showAddToHomeScreen();
-
+	e.userChoice.then(function (choiceResult) {
+		var fields = {
+			eventCategory: 'ATHS'
+		};
+		console.log(choiceResult);
+		if (choiceResult.outcome === 'dismissed') {
+			console.log('User cancelled home screen install');
+			fields.eventAction ='ATHS Cancelled';
+		}
+		else {
+			console.log('User added to home screen');
+			fields.eventAction ='ATHS Confirmed';
+		}
+	});
 });
