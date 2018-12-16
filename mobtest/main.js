@@ -52,20 +52,25 @@ function displayNotification(message) {
   document.getElementById("divInfo").innerHTML=localStorage.getItem("NotificationRecord");
 }
 
-window.addEventListener('beforeinstallprompt', function (e) {
+var deferredPrompt;
 
-	e.userChoice.then(function (choiceResult) {
-		var fields = {
-			eventCategory: 'ATHS'
-		};
-		console.log(choiceResult);
-		if (choiceResult.outcome === 'dismissed') {
-			console.log('User cancelled home screen install');
-			fields.eventAction ='ATHS Cancelled';
-		}
-		else {
-			console.log('User added to home screen');
-			fields.eventAction ='ATHS Confirmed';
-		}
-	});
+window.addEventListener('beforeinstallprompt', function (e) {
+  e.preventDefault(); // Prevent Chrome 67 and earlier from automatically showing the prompt
+  deferredPrompt = e; // Stash the event so it can be triggered later.
+  document.getElementById("btnATHS").style.display="block";
 });
+
+function addToHomescreen() {
+  document.getElementById("btnATHS").style.display="none";
+  deferredPrompt.prompt();  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice
+    .then(function(choiceResult){
+
+  if (choiceResult.outcome === 'accepted') {
+    console.log('User accepted the A2HS prompt');
+  } else {
+    console.log('User dismissed the A2HS prompt');
+  }
+
+  deferredPrompt = null;
+}
