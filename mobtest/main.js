@@ -73,5 +73,5 @@ function addToHomescreen() {
   }
 
   deferredPrompt = null;
-  }
-}
+
+});}
