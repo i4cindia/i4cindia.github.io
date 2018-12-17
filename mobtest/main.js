@@ -28,6 +28,13 @@ function clearNotifications() {
 	setNotifications()
 }
 
+function unregisterServiceWorker(){
+	navigator.serviceWorker.getRegistrations().then(function(registrations) {
+		for(let registration of registrations) {
+			registration.unregister()
+		} });
+}
+
 function callNotifier() {
 	console.log("notifier called");
 	message=document.getElementById("txtMessage").value;
