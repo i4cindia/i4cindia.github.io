@@ -15,10 +15,17 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   pushButton.textContent = 'Push Not Supported';
 }
 
-
 Notification.requestPermission(function(status) {
     console.log('Notification permission status:', status);
 });
+
+function unregisterServiceWorker(){
+	navigator.serviceWorker.getRegistrations().then(function(registrations) {
+		for(let registration of registrations) {
+			registration.unregister()
+		} });
+	alert("Done");
+}
 
 function setNotifications() {
 	document.getElementById("divInfo").innerHTML=localStorage.getItem("NotificationRecord");
@@ -26,13 +33,6 @@ function setNotifications() {
 function clearNotifications() {
 	localStorage.setItem("NotificationRecord","");
 	setNotifications()
-}
-
-function unregisterServiceWorker(){
-	navigator.serviceWorker.getRegistrations().then(function(registrations) {
-		for(let registration of registrations) {
-			registration.unregister()
-		} });
 }
 
 function callNotifier() {
