@@ -2,7 +2,6 @@
 
 var cacheName = 'SIHPage';
 var filesToCache = [
-  '/mobtest',
   'index.html',
   'main.js'
 ];
