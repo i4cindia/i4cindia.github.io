@@ -23,7 +23,13 @@ else if(redirCode=="CorpRef20") redirectUrl="https://docs.google.com/forms/d/e/1
 else if(redirCode=="SchoolSpoc") redirectUrl="https://docs.google.com/forms/d/e/1FAIpQLSdbxX6n0CBqV9JHeeegIKRAXjUmNS_06AL82WU2Yr1H2aFxcw/viewform";
 else if(redirCode=="SIH2020OrgCollaterals") redirectUrl="https://drive.google.com/drive/folders/1FUPywaxdzxCq_ppiD7pMsayNQPPGa2BL?usp=sharing";
 else if(redirCode=="SmartPoster") redirectUrl="https://i4c.in/site/SSHPosterCompetition";
-else redirectUrl = "https://i4c.in";
+else {
+  qStrCode = redirCode.substring(0,5);
+  if (qStrCode=="SSHId") {
+    redirectUrl = "https://i4c.in?"+redirCode.substring(6,redirCode.length);
+  }
+  else redirectUrl = "https://i4c.in";
+}
 
 //window.alert(redirectUrl);
 window.location.href = redirectUrl;
